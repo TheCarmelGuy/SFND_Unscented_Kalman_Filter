@@ -1,5 +1,5 @@
 # SFND_Unscented_Kalman_Filter
-Sensor Fusion UKF Highway Project Starter Code
+Sensor Fusion UKF Highway Project 
 
 <img src="media/ukf_highway_tracked.gif" width="700" height="400" />
 
@@ -26,6 +26,19 @@ it's own UKF object generated for it, and will update each indidual one during e
 
 The red spheres above cars represent the (x,y) lidar detection and the purple lines show the radar measurements with the velocity magnitude along the detected angle. The Z axis is not taken into account for tracking, so you are only tracking along the X/Y axis.
 
+
+## Description
+
+This module does the following:
+
+* Uses UKF to generate estimate for position and velocity:
+
+  *  Uses CVTR Model to model linear dynamics of vehicle 
+  *  Uses linear (Lidar: x pose, y pose) and non-linear (Radar: yaw, radius, yaw rate) Sensor models to perform update step
+  *  Implicitly deals with sensor fusion of Radar and Lidar 
+
+
+
 ---
 
 ## Other Important Dependencies
@@ -48,29 +61,8 @@ The red spheres above cars represent the (x,y) lidar detection and the purple li
 3. Compile: `cmake .. && make`
 4. Run it: `./ukf_highway`
 
-## Editor Settings
-
-We've purposefully kept editor configuration files out of this repo in order to
-keep it as simple and environment agnostic as possible. However, we recommend
-using the following settings:
-
-* indent using spaces
-* set tab width to 2 spaces (keeps the matrices in source code aligned)
-
 ## Code Style
 
 Please stick to [Google's C++ style guide](https://google.github.io/styleguide/cppguide.html) as much as possible.
 
-## Generating Additional Data
 
-This is optional!
-
-If you'd like to generate your own radar and lidar modify the code in `highway.h` to alter the cars. Also check out `tools.cpp` to
-change how measurements are taken, for instance lidar markers could be the (x,y) center of bounding boxes by scanning the PCD environment
-and performing clustering. This is similar to what was done in Sensor Fusion Lidar Obstacle Detection.
-
-## Project Instructions and Rubric
-
-This information is only accessible by people who are already enrolled in Sensor Fusion. 
-If you are enrolled, see the project page in the classroom
-for instructions and the project rubric.
